@@ -37,15 +37,6 @@ For more information on ChirpStack HTTP integration, please refer to the [ChirpS
 
 ## Project Structure
 
-Chirpstack-HTTP-Server-Integration/
-│
-├── main.py
-├── venv/
-└── HTTP Server Test Example/
-├── req.py
-└── test.py
-
-
 - `main.py`: Contains the HTTP integration code for handling ChirpStack events and storing data in a CSV file.
 - `venv/`: Virtual environment directory.
 - `HTTP Server Test Example/`: Example scripts for testing the HTTP server.
