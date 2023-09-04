@@ -29,7 +29,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def up(self, body):
         up = self.unmarshal(body, integration.UplinkEvent())
-        print("Uplink received from: %s with payload: %s" % (up.device_info.device_name, up.data.hex()))
+        print("Uplink received from: %s with F count: %s" % (up.device_info.device_name, up.f_cnt))
 
         # Extract values from the 'up' object
         row_data = [
@@ -47,7 +47,8 @@ class Handler(BaseHTTPRequestHandler):
             up.dev_addr,
             up.dr,
             up.f_port,
-            up.data.hex()
+            up.data.hex(),
+            up.f_cnt
         ]
 
         # Extract rxInfo values
@@ -122,6 +123,7 @@ class Handler(BaseHTTPRequestHandler):
             "Dr",
             "fPort",
             "Data Hex",
+            "F Count",
             "rxInfo Gateway ID",
             "rxInfo Uplink ID",
             "rxInfo RSSI",
